@@ -27,7 +27,7 @@ class ViewWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         AspectRatio(
-          aspectRatio: 1.5,
+          aspectRatio:(MediaQuery.of(context).size.height>MediaQuery.of(context).size.width)? 1.5:4,
           child: Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,

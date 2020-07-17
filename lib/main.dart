@@ -68,12 +68,15 @@ class _MyHomePageState extends State<MyHomePage> {
           itemBuilder: (context, index) {
             String key = themes.keys.elementAt(index);
             TextTheme theme = themes[key]();
-            return ListTile(
-                key: UniqueKey(),
-                onTap: () {
-                  updateFont(theme);
-                },
-                title: Text(key));
+            return Theme(
+              data: getTheme(theme: theme, isLight: isLight),
+              child: ListTile(
+                  key: UniqueKey(),
+                  onTap: () {
+                    updateFont(theme);
+                  },
+                  title: Text(key)),
+            );
           });
     }));
   }
