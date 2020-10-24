@@ -18,7 +18,7 @@ To provide the actual feel of theme that will be used in the project.
 12. [ ] Scrollable list with dynamic animation.
 
 ## Contributors
-1. Vivek Yadav ([@viveky259259](https://twitter.com/viveky259259))
+1. Vivek Yadav ([@viveky259259](https://twitter.com/viveky259259){:target="_blank" rel="noopener"})
 
 ## Perks of contribution
 1. <b>OSS contribution</b>
