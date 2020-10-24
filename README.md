@@ -4,28 +4,27 @@
 To provide the actual feel of theme that will be used in the project.
 
 ## Milestones
-[x] Simple Login Page.
-[x] Dynamic Fonts.
-[ ] Dynamic TextStyles.
-[ ] Dynamic TextThemes.
-[ ] Dynamic App Theme.
-[ ] Dynamic Route navigation animations.
-[ ] Multiple themes and option to toggle between them.
-[ ] Feeds page.
-[ ] Dashboard page.
-[ ] Add Icon option.
-[ ] Editable pages [texts].
-[ ] Scrollable list with dynamic animation.
+1. [x] Simple Login Page.
+2. [x] Dynamic Fonts.
+3. [ ] Dynamic TextStyles.
+4. [ ] Dynamic TextThemes.
+5. [ ] Dynamic App Theme.
+6. [ ] Dynamic Route navigation animations.
+7. [ ] Multiple themes and option to toggle between them.
+8. [ ] Feeds page.
+9. [ ] Dashboard page.
+10. [ ] Add Icon option.
+11. [ ] Editable pages [texts].
+12. [ ] Scrollable list with dynamic animation.
 
 ## Contributors
 1. Vivek Yadav (@viveky259259)
 
 ## Perks of contribution
-*. <b>OSS contribution</b>
-1. Name in github repo
-2. Feature on PRO Coach Youtube channel.
-3. A tweet from @viveky259259 about the contribution
-4. OSS contribution
+1. <b>OSS contribution</b>
+2. Name in github repo
+3. Feature on PRO Coach Youtube channel.
+4. A tweet from @viveky259259 about the contribution
 
 ## License
 MIT License
