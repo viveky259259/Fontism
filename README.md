@@ -1,7 +1,10 @@
-# Fontism
+# Fontism [Website](https://fontism.netlify.app/#/)
 
 ## Goal
 To provide the actual feel of theme that will be used in the project.
+
+## URL
+1. [x] https://fontism.netlify.app/#/
 
 ## Milestones
 1. [x] Simple Login Page.
