@@ -5,7 +5,7 @@ class ResponsiveHelper extends StatefulWidget {
   final Widget mobileWidget;
 
   const ResponsiveHelper(
-      {Key key, @required this.webWidget, @required this.mobileWidget})
+      {Key? key, required this.webWidget, required this.mobileWidget})
       : super(key: key);
 
   @override

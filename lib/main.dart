@@ -9,7 +9,7 @@ void main() {
   runApp(MyApp());
 }
 
-ThemeData getTheme({TextTheme theme, bool isLight}) {
+ThemeData getTheme({TextTheme? theme, required bool isLight}) {
   if (theme == null) theme = GoogleFonts.nunitoTextTheme();
   return new ThemeData(
       brightness: isLight ? Brightness.light : Brightness.dark,
@@ -46,8 +46,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
+  MyHomePage({Key? key, this.title}) : super(key: key);
+  final String? title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
   bool isLight = true;
 
   void updateFont(TextTheme theme) {
-    DynamicTheme.of(context)
+    DynamicTheme.of(context)!
         .setThemeData(getTheme(theme: theme, isLight: isLight));
   }
 
@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
           itemCount: themes.length,
           itemBuilder: (context, index) {
             String key = themes.keys.elementAt(index);
-            TextTheme theme = themes[key]();
+            TextTheme theme = themes[key]!();
             return Theme(
               data: getTheme(theme: theme, isLight: isLight),
               child: ListTile(
@@ -91,10 +91,10 @@ class _MyHomePageState extends State<MyHomePage> {
       selectedItemColor: Colors.blue,
       unselectedItemColor: Colors.grey,
       items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
-        BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
-        BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
-        BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home'))
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home')
       ],
     );
   }
@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return ResponsiveHelper(
         webWidget: Scaffold(
           appBar: AppBar(
-            title: Text(widget.title),
+            title: Text(widget.title!),
           ),
           body: Row(
             children: <Widget>[drawerWidget(), Expanded(child: bodyWidget())],
@@ -113,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         mobileWidget: Scaffold(
           appBar: AppBar(
-            title: Text(widget.title),
+            title: Text(widget.title!),
           ),
           drawer: drawerWidget(),
           body: bodyWidget(),
@@ -121,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ));
   }
 
-  Map<String, TextTheme Function([TextTheme])> themes = {
+  Map<String, TextTheme Function([TextTheme?])> themes = {
     'ABeeZee': GoogleFonts.aBeeZeeTextTheme,
     'Abel': GoogleFonts.abelTextTheme,
     'Abhaya Libre': GoogleFonts.abhayaLibreTextTheme,
@@ -737,7 +737,7 @@ class _MyHomePageState extends State<MyHomePage> {
     'Mukta Mahee': GoogleFonts.muktaMaheeTextTheme,
     'Mukta Malar': GoogleFonts.muktaMalarTextTheme,
     'Mukta Vaani': GoogleFonts.muktaVaaniTextTheme,
-    'Muli': GoogleFonts.muliTextTheme,
+    'Mulish': GoogleFonts.mulishTextTheme,
     'Mystery Quest': GoogleFonts.mysteryQuestTextTheme,
     'NTR': GoogleFonts.ntrTextTheme,
     'Nanum Brush Script': GoogleFonts.nanumBrushScriptTextTheme,
