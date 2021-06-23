@@ -16,6 +16,8 @@ dependencies:
   responsive_framework: 0.1.2
   dynamic_theme:
     path: ./packages/dynamic_theme
+  flex_color_picker: ^2.0.2
+
 
 
 
