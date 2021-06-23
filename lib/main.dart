@@ -1,4 +1,5 @@
 import 'package:desktopApp/responsive_helper.dart';
+import 'package:desktopApp/settings/page.dart';
 import 'package:desktopApp/view_widget.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
@@ -46,8 +47,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, this.title}) : super(key: key);
-  final String? title;
+  MyHomePage({Key? key, required this.title}) : super(key: key);
+  final String title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -59,6 +60,13 @@ class _MyHomePageState extends State<MyHomePage> {
   void updateFont(TextTheme theme) {
     DynamicTheme.of(context)!
         .setThemeData(getTheme(theme: theme, isLight: isLight));
+  }
+
+  void updateTheme(ThemeData themeData) {
+    DynamicTheme.of(context)!.setThemeData(Theme.of(context).copyWith(
+        primaryColor: themeData.primaryColor,
+        accentColor: themeData.accentColor,
+        primaryColorDark: themeData.primaryColorDark));
   }
 
   Widget drawerWidget() {
@@ -103,23 +111,34 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return ResponsiveHelper(
         webWidget: Scaffold(
-          appBar: AppBar(
-            title: Text(widget.title!),
-          ),
+          appBar: appBar,
           body: Row(
             children: <Widget>[drawerWidget(), Expanded(child: bodyWidget())],
           ),
           bottomNavigationBar: bottomNavigationWidget(),
         ),
         mobileWidget: Scaffold(
-          appBar: AppBar(
-            title: Text(widget.title!),
-          ),
+          appBar: appBar,
           drawer: drawerWidget(),
           body: bodyWidget(),
           bottomNavigationBar: bottomNavigationWidget(),
         ));
   }
+
+  AppBar get appBar => AppBar(
+        title: Text(widget.title),
+        actions: [
+          IconButton(
+              onPressed: () async {
+                var result = await Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (_) => SettingsPage()));
+                if (result != null && result is ThemeData) {
+                  updateTheme(result);
+                }
+              },
+              icon: Icon(Icons.settings))
+        ],
+      );
 
   Map<String, TextTheme Function([TextTheme?])> themes = {
     'ABeeZee': GoogleFonts.aBeeZeeTextTheme,
